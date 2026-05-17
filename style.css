@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* Global style */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+
+    background-color: #efeff5;
+}
+
+/* ===================== HEADER ===================== */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: white;
+
+    width: 100%;
+    padding: 0.5rem 1rem;
+
+    background: #181e4c;
+}
+
+header .logo i.ti {
+    font-size: 2rem;
+    margin-left: 15px;
+}
+
+/* ===================== MAIN ===================== */
+main {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    flex: 1;
+}
+
+/* ===================== INPUT CONTAINER ===================== */
+.input-container {
+    display: flex;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .input-container {
+        flex-direction: column;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+    padding: 28px;
+}
+
+/* Tambah buku baru */
+.input-user {
+    background: #fefdfd;
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.15);
+    justify-content: flex-start;
+}
+
+.input-user:nth-child(1) {
+    flex: 2;
+    border-top: 2px solid #4a26bd;
+}
+
+.input-user:nth-child(2) {
+    flex: 1;
+    border-top: 2px solid #2ba35a;
+}
+
+/* Input Title (Tambah Buku) */
+.input-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.input-title h2 {
+    margin: 0;
+    color: #4a26bd;
+    font-size: 1.1rem;
+}
+
+.ti-plus {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #4a26bd;
+    flex-shrink: 0;
+}
+
+/* Form fields */
+#bookForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-book {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.input-book h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    color: #1d1f28;
+}
+
+.input-book label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #353845;
+}
+
+.optional-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888;
+}
+
+input[type="text"],
+input[type="number"] {
+    height: 44px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    padding-inline: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4a26bd;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#bookFormIsComplete {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+#bookFormSubmit {
+    height: 46px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 6px;
+    background-color: #4a26bd;
+    transition: background-color 0.2s;
+}
+
+#bookFormSubmit:hover {
+    background-color: #3b1fa0;
+}
+
+/* ===================== IMAGE UPLOAD ===================== */
+
+/* Sembunyikan input file asli */
+#bookFormImage {
+    display: none;
+}
+
+.image-upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Kotak preview gambar */
+.image-preview {
+    width: 100%;
+    height: 160px;
+    border: 2px dashed #c5b8f0;
+    border-radius: 10px;
+    background: #f7f4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.image-preview:has(img) {
+    border-style: solid;
+    background: #fff;
+}
+
+/* Placeholder di dalam kotak preview */
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #a090d8;
+}
+
+.image-placeholder .ti-photo {
+    font-size: 2.2rem;
+}
+
+.image-placeholder span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Tombol pilih gambar */
+.image-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: 40px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a26bd;
+    cursor: pointer;
+
+    border: 2px solid #4a26bd;
+    border-radius: 6px;
+    background: transparent;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.image-upload-btn:hover {
+    background-color: #4a26bd;
+    color: white;
+}
+
+/* ===================== SEARCH ===================== */
+.input-search {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.input-search h2 {
+    margin: 0;
+    color: #2ba35a;
+    font-size: 1.1rem;
+}
+
+.ti-search {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #2ba35a;
+    flex-shrink: 0;
+}
+
+#searchBook {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#searchBook label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #353845;
+}
+
+#searchSubmit {
+    height: 46px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 6px;
+    background-color: #2ba35a;
+    transition: background-color 0.2s;
+}
+
+#searchSubmit:hover {
+    background-color: #22894a;
+}
+
+/* ===================== BOOK SHOW ===================== */
+.book-show {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===================== BOOK PREVIEW ===================== */
+.book-preview {
+    padding: 0;
+    background: #fefdfd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 24px;
+}
+
+.book-title h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.unread {
+    background-color: #fdf8f0;
+}
+
+.read {
+    background-color: #f4fbf5;
+}
+
+.unread h2 {
+    color: #d67312;
+}
+
+.read h2 {
+    color: #2ba35a;
+}
+
+/* Icons in section headers */
+.icon-header .ti-clock-hour-4 {
+    font-size: 26px;
+    color: #d67312;
+}
+
+.icon-header .ti-check {
+    font-size: 18px;
+    color: white;
+    background: #2ba35a;
+    padding: 4px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+/* ===================== CONTAINER LIST ===================== */
+.container-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================== BOOK ITEM ===================== */
+.bookItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.bookItem:last-child {
+    border-bottom: none;
+}
+
+/* ===================== BOOK COVER ===================== */
+.book-cover {
+    flex-shrink: 0;
+    width: 72px;
+    height: 100px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Placeholder cover — warna berdasarkan huruf awal */
+.book-cover--placeholder {
+    background: linear-gradient(135deg, #4a26bd 0%, #7c5ce0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-initial {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Book description */
+.bookItem-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.bookItem-description h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1d1f28;
+}
+
+.bookItem-description p {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0;
+}
+
+.icon-calendar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.icon-calendar .ti-calendar-week {
+    font-size: 16px;
+}
+
+.icon-calendar p {
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* ===================== BOOK STATUS BUTTONS ===================== */
+.book-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Base style for all action wrappers */
+.book-completed,
+.book-delete,
+.book-edit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.book-completed,
+.book-delete,
+.book-edit {
+    background: transparent;
+}
+
+/* Completed button — green outline (for incomplete books) */
+.book-completed {
+    border: 2px solid #2ba35a;
+}
+
+.book-completed button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #2ba35a;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.book-completed span .ti-check {
+    font-size: 10px;
+    color: white;
+    background: #2ba35a;
+    padding: 3px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Completed button — muted style (for already-complete books) */
+.book-completed.done {
+    border: none;
+    background: #e0eee4;
+}
+
+.book-completed.done button {
+    color: #3fa769;
+}
+
+/* Delete button — red outline */
+.book-delete {
+    border: 2px solid #e53e3e;
+}
+
+.book-delete button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #e53e3e;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.book-delete span .ti-trash {
+    font-size: 10px;
+    color: white;
+    background: #e53e3e;
+    padding: 3px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Edit button — purple outline */
+.book-edit {
+    border: 2px solid #4a26bd;
+}
+
+.book-edit button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #4a26bd;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.book-edit span .ti-pencil {
+    font-size: 10px;
+    color: white;
+    background: #4a26bd;
+    padding: 3px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effects */
+.book-completed:hover { background: #f0faf4; }
+.book-delete:hover    { background: #fff5f5; }
+.book-edit:hover      { background: #f4f0ff; }
+
+/* ===================== FOOTER ===================== */
+footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.85rem;
+    color: #888;
+    background: #fefdfd;
+    border-top: 1px solid #e8e8e8;
+    margin-top: auto;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media screen and (max-width: 600px) {
+    .book-status {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .bookItem {
+        flex-wrap: wrap;
+    }
+
+    .book-cover {
+        width: 60px;
+        height: 84px;
+    }
+}
