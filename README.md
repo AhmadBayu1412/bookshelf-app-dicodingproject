@@ -44,7 +44,6 @@ No installation required. Simply open `index.html` in your browser.
 ## 🛠️ Technologies
 
 - **HTML5, CSS3, JavaScript** (Vanilla — no framework)
-- :contentReference[oaicite:0]{index=0} — interface icons
 - **localStorage** — client-side data storage
 
 ---
